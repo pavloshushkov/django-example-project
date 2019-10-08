@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block title %}<title>Delete company {{ company.name }}</title>{% endblock %}
+
+{% block content %}
+    <form action="{% url 'main:company-delete' pk=company.id %}" method="post">{% csrf_token %}
+        Are you sure to delete this company {% if company.name %}'{{ company.name }}'{% endif %} #{{ company.id }}?
+        <input type="submit" class="btn btn-danger btn-block mt-4" value="Delete">
+    </form>
+{% endblock %}

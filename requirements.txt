@@ -1,0 +1,5 @@
+Django==2.1.4
+django-localflavor==2.1
+django-filter==2.1.0
+django-widget-tweaks==1.4.3
+psycopg2-binary==2.8.3

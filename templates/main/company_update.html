@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}<title>Update company {{ company.name }}</title>{% endblock %}
+
+{% block content %}
+    <form action="{% url 'main:company-update' pk=company.id %}" method="post">{% csrf_token %}
+        {% for field in form %}
+            <tr>
+                <th>{{ field.label_tag }}</th>
+                <td>
+                    {{ field.errors }}
+                    {% render_field field class="form-control" placeholder=field.label %}
+                    {{ field.help_text }}
+                </td>
+            </tr>
+        {% endfor %}
+        <input type="submit" class="btn btn-primary btn-block mt-4" value="Update">
+    </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+*.css
+*.sqlite3
+*.pyc
+*.pyo
+.env/*
+.DS_Store
+.idea
+logs/
+media/
+settings_local.py
+static_files
+celerybeat-schedule
+bower_components/*
+node_modules/*
+users_google_auth_tokens/*
